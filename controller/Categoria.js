@@ -12,7 +12,7 @@ router.post("/categoria/cadastrarCategoria", (req, res) => {
 
     categoriaModel.create({ nome_categoria })
         .then(() => {
-            return restart.status(201).json({
+            return res.status(201).json({
                 errorStatus: false,
                 messageStatus: "Categoria inserida com sucesso"
             });

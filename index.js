@@ -10,9 +10,17 @@ app.use(express.json());
 //CONFIGURAÇÃO PARA O EXPRESS TRABALHAR COM DADOS DE FORMULARIO
 app.use(express.urlencoded({extended:true}));
 
+//TESTE DE MODEL PARA A CRIAÇÃO DE TABELAS
+// const categoriaModel = require('./model/Categoria');
+// const livroModel = require('./model/Livro');
+
 //IMPORTAÇÃO DA CONTROLLER DE CATEGORIA
 const categoriaController = require("./controller/Categoria");
 app.use("/", categoriaController);
+
+//IMPORTAÇÃO DA CONTROLLER DE LIVRO
+const livroController = require("./controller/Livro");
+app.use("/", livroController);
 
 //TESTE DE CONEXÃO
 /*const connection = require("./database/database");
